@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Personal AI Knowledge Base</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="main-content">
+        <div id="upload-container" class="{{'hidden' if not show_upload_form}}">
+            <div class="container">
+                <h2>Upload a PDF File</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="pdf_file" accept="application/pdf" required/>
+                    <br/>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="file-list" class="file-list">
+            <h3>Uploaded Files:</h3>
+            <ul>
+                {% for file in files %}
+                <li>
+                    {{ file }}
+                    <button class="process-button" onclick="processFile('{{ file }}')">
+                        <i class="fas fa-robot"></i> Process
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+            <button onclick="showUploadForm()">Add New File</button>
+        </div>
+
+        <div class="chat-container">
+            <h3>Chat with Bot</h3>
+            <div id="chat-box" class="chat-box"></div>
+            <input type="text" id="chat-message" class="chat-input"/>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </div>
+</body>
+</html>

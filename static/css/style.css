@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+}
+
+.main-content {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.container, .file-list, .chat-container {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-list li {
+    margin: 5px 0;
+    padding: 5px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.process-button {
+    padding: 4px 8px; /* Smaller padding for a smaller button */
+    font-size: 0.7em; /* Smaller font size */
+    background-color: #007bff; /* A different color, e.g., blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase; /* Make the text uppercase for a more button-like appearance */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Add a subtle shadow for depth */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    gap: 5px; /* Add some space between icon and text */
+    width: 100px; /* Fixed width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Ensure text is centered */
+}
+
+.process-button i {
+    font-size: 1em; /* Adjust icon size as needed */
+}
+
+.process-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover for a "lifting" effect */
+}
+
+.chat-box {
+    height: 150px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.chat-input, button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none;
+}
