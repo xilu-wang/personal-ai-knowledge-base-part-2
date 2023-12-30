@@ -7,11 +7,12 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Ensure the upload folder exists
+
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 
+# helper functions
 def get_uploaded_files():
     return os.listdir(UPLOAD_FOLDER)
 
@@ -31,6 +32,7 @@ def count_words_in_pdf(file_path):
         return num_words
 
 
+# Flask app handlers
 @app.route('/process/<filename>', methods=['GET'])
 def process_file(filename):
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -58,7 +60,6 @@ def home():
 @app.route('/chat', methods=['POST'])
 def chat():
     user_message = request.form.get('message')
-    # Simple echo chatbot response
     bot_response = f"Bot: I got your message - '{user_message}'. How can I help you?"
     return bot_response
 
