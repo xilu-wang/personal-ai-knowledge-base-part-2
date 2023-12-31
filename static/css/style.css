@@ -68,6 +68,37 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover for a "lifting" effect */
 }
 
+.progress-bar {
+    width: 100px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.file-actions {
+    margin-top: 10px;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background-color: #4CAF50;
+    width: 0%; /* Initially no width */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.log-output {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
 .chat-box {
     height: 150px;
     border: 1px solid #ccc;

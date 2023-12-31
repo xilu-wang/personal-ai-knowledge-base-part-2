@@ -24,9 +24,15 @@
                 {% for file in files %}
                 <li>
                     {{ file }}
-                    <button class="process-button" onclick="processFile('{{ file }}')">
-                        <i class="fas fa-robot"></i> Process
-                    </button>
+                    <div class="file-actions">
+                        <button class="process-button" onclick="processFile('{{ file }}')">
+                            <i class="fas fa-robot"></i> Process
+                        </button>
+                        <div class="progress-bar hidden" id="progress-{{ file }}">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="log-output hidden" id="log-{{ file }}"></div>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
